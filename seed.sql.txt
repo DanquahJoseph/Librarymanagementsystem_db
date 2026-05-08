@@ -1,0 +1,38 @@
+librarymanagementsystem_db=# insert into members(full_name)
+librarymanagementsystem_db-# values('Joseph Danquah'),
+librarymanagementsystem_db-# ('Ellen Adjei'),
+librarymanagementsystem_db-# ('Mercy Bawa'),
+librarymanagementsystem_db-# ('Mandy Bae'),
+librarymanagementsystem_db-# ('Eric Owiredu');
+INSERT 0 5
+
+librarymanagementsystem_db=# insert into Books(book_name,isbn)
+librarymanagementsystem_db-# values('The Lost Sheep','FBI-23-98-34'),
+librarymanagementsystem_db-# ('Cinderella','FBI-34-89-45'),
+librarymanagementsystem_db-# ('Sleepy Beauty','FBA-23-45-67'),
+librarymanagementsystem_db-# ('Change Your Thinking','FBA-23-45-67'),
+librarymanagementsystem_db-# ('Desert Rivers','FB1-98-00-98'),
+librarymanagementsystem_db-# ('Son of Umbele','FCW-23-01-65'),
+librarymanagementsystem_db-# ('Kaya Girl','FBQ-12-45-67'),
+librarymanagementsystem_db-# ('Brain Lens','FBA-12-34-54'),
+librarymanagementsystem_db-# ('The Rainbow and Giants','FBQ-23-45-45'),
+librarymanagementsystem_db-# ('Success Stories','FBE-23-90-00');
+INSERT 0 10
+
+librarymanagementsystem_db=# insert into Author(author_name)
+librarymanagementsystem_db-# values('Joseph Kingship'),
+librarymanagementsystem_db-# ('Lade Wosornu'),
+librarymanagementsystem_db-# ('Kelvy Sarvy');
+INSERT 0 3
+
+librarymanagementsystem_db=# insert into Loans(member_id,book_id,borrow_date)
+librarymanagementsystem_db-# values(2,4,CURRENT_DATE),
+librarymanagementsystem_db-# (1,10,CURRENT_DATE),
+librarymanagementsystem_db-# (3,6,CURRENT_DATE),
+librarymanagementsystem_db-# (3,10,CURRENT_DATE),
+librarymanagementsystem_db-# (5,1,CURRENT_DATE),
+librarymanagementsystem_db-# (5,7,CURRENT_DATE),
+librarymanagementsystem_db-# (4,8,CURRENT_DATE),
+librarymanagementsystem_db-# (3,8,CURRENT_DATE),
+librarymanagementsystem_db-# (1,8,CURRENT_DATE);
+INSERT 0 9

@@ -1,0 +1,39 @@
+librarymanagementsystem_db=# Create table members(
+librarymanagementsystem_db(# member_id serial primary key,
+librarymanagementsystem_db(# full_name Varchar(30));
+CREATE TABLE
+
+librarymanagementsystem_db=# create table Books(
+librarymanagementsystem_db(# book_id serial primary key,
+librarymanagementsystem_db(# book_name varchar(50),
+librarymanagementsystem_db(# isbn varchar(80));
+CREATE TABLE
+
+librarymanagementsystem_db=# create table Author(
+librarymanagementsystem_db(# author_id serial primary key,
+librarymanagementsystem_db(# author_name varchar(50));
+CREATE TABLE
+
+librarymanagementsystem_db=# create table Books_author(
+librarymanagementsystem_db(# author_id serial REFERENCES Author(author_id),
+librarymanagementsystem_db(# book_id serial REFERENCES Books(book_id));
+CREATE TABLE
+
+librarymanagementsystem_db=# create table Loans(
+librarymanagementsystem_db(# loan_id serial primary key ,
+librarymanagementsystem_db(# member_id serial references members(member_id),
+librarymanagementsystem_db(# book_id serial references Books(book_id),
+librarymanagementsystem_db(# borrow_date timestamp default current_timestamp,
+librarymanagementsystem_db(# return_date date);
+CREATE TABLE
+
+librarymanagementsystem_db=# \dt
+              List of tables
+ Schema |     Name     | Type  |  Owner
+--------+--------------+-------+----------
+ public | author       | table | postgres
+ public | books        | table | postgres
+ public | books_author | table | postgres
+ public | loans        | table | postgres
+ public | members      | table | postgres
+(5 rows)

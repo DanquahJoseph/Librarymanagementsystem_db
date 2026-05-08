@@ -1,0 +1,44 @@
+--ALL BORROWED BOOKS--
+librarymanagementsystem_db=# select member_id , count(*) as total_borrowed from Loans where return_date is NULL
+librarymanagementsystem_db-# Group by member_id;
+ member_id | total_borrowed
+-----------+----------------
+         1 |              3
+         2 |              1
+         3 |              3
+         4 |              1
+         5 |              2
+(5 rows)
+
+
+--MEMBERS WHO BORROWED MORE THAN 2 BOOKS --
+librarymanagementsystem_db=# select member_id from Loans
+librarymanagementsystem_db-# Group by member_id
+librarymanagementsystem_db-# having COUNT(*) >2;
+ member_id
+-----------
+         3
+         1
+(2 rows)
+
+--MOST BORROWED BOOK--
+librarymanagementsystem_db=# select book_id , count(*) as times_borrowed
+librarymanagementsystem_db-# from loans
+librarymanagementsystem_db-# group by book_id
+librarymanagementsystem_db-# order by times_borrowed desc
+librarymanagementsystem_db-# limit 1;
+ book_id | times_borrowed
+---------+----------------
+       8 |              3
+(1 row)
+
+
+--MEMBERS WHO NEVER BORROW--
+librarymanagementsystem_db=# select m.member_id , m.full_name from members m
+librarymanagementsystem_db-# left join Loans L on m.member_id = L.member_id
+librarymanagementsystem_db-# where L.member_id is null;
+ member_id | full_name
+-----------+-----------
+(0 rows)
+
+
